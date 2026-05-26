@@ -40,7 +40,7 @@ Siga os passos abaixo para rodar o projeto localmente:
 
 2.  **Acesse a pasta do projeto:**
     ```bash
-    cd iPhone13Page
+    cd iPhone13Pro-React
     ```
 
 3.  **Instale as dependências:**
