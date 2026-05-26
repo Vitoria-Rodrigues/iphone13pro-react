@@ -12,7 +12,9 @@ O projeto foi construído utilizando as seguintes tecnologias:
 
 ## Preview da página
 
-[Clique para visualizar a página.](https://iphone13-pro-react.vercel.app/)
+## Preview da página
+
+<a href="https://iphone13-pro-react.vercel.app/" target="_blank" rel="noopener noreferrer">Clique para visualizar a página.</a>
 
 ## Estrutura de Pastas
 
