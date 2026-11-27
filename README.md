@@ -1,81 +1,115 @@
-# iPhone 13 Pro Page - React
+# iPhone 13 Pro Showcase (`@vitoria-rodrigues/iphone13pro-react`)
 
-Réplica interativa da página de apresentação do iPhone 13 Pro, focada em fidelidade visual e experiência do utilizador. O projeto simula a navegação oficial da Apple, permitindo a troca dinâmica de cores e visualização de detalhes do dispositivo.
+Interactive product showcase replicating the Apple iPhone 13 Pro presentation page, built with React 19 and Vite 7 with dynamic color finish switching and responsive styling.
 
-## Demonstração
-
-O projeto está disponível para visualização online:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://iphone13-pro-react.vercel.app/)
-
-> **Link Direto:** [iphone13-pro-react.vercel.app](https://iphone13-pro-react.vercel.app/)
-
-## Tecnologias Utilizadas
-
-- **React 19**: Desenvolvimento de interface baseada em componentes.
-- **Vite**: Ferramenta de build e servidor de desenvolvimento de alta performance.
-- **CSS3**: Estilização modular e animações.
-- **Vercel**: Plataforma de Cloud para Deploy e Hosting.
-
-## 📁 Estrutura de Pastas
-
-```text
-src/
-├── assets/img/       # Recursos visuais (imagens do produto e logos)
-├── components/       # Componentes reutilizáveis da UI
-├── pages/            # Componentes de página (Views principais)
-├── App.jsx           # Componente raiz e gestão de rotas/estado global
-├── index.css         # Estilos e resets globais
-└── main.jsx          # Ponto de entrada da aplicação
-```
-
-## Como Executar o Projeto
-
-Siga os passos abaixo para rodar o projeto localmente:
-
-
-1.  **Clone o repositório:**
-
-    ```bash
-
-    git clone [url-do-repositorio]
-
-    ```
-
-
-
-2.  **Acesse a pasta do projeto:**
-
-    ```bash
-
-    cd iPhone13Pro-React
-
-    ```
-
-
-
-3.  **Instale as dependências:**
-
-    ```bash
-
-    npm install
-
-    ```
-
-
-
-4.  **Inicie o servidor de desenvolvimento:**
-
-    ```bash
-
-    npm run dev
-
-    ```
+Live deployment: [iphone13-pro-react.vercel.app](https://iphone13-pro-react.vercel.app/)
 
 ---
 
-## Deploy na Vercel
+## 1. Technology Stack
 
-Este projeto utiliza o fluxo de Continuous Deployment através da Vercel. Cada atualização no ramo principal (main) dispara um novo build e atualização automática do site.
+- **UI Library**: React 19.1
+- **Build Tool**: Vite 7.1
+- **Language**: JavaScript (ES Modules, JSX)
+- **Styling**: Modular component CSS and global resets
+- **Code Quality**: ESLint 9
+- **Package Management**: pnpm 10 with `catalogMode: strict`
+- **Hosting**: Vercel Continuous Deployment
 
-Desenvolvido para fins de estudo em desenvolvimento Frontend.
+---
+
+## 2. Architecture Overview
+
+The application composes modular header, navigation, promotional banner, and interactive device showcase sections from `src/pages/Home.jsx`.
+
+```mermaid
+flowchart TD
+  App["App.jsx (Root Shell)"] --> Home["Home.jsx (Showcase Page)"]
+  Home --> Header["Header.jsx (Top Navigation)"]
+  Home --> NaviPhone["NaviPhone.jsx (Product Sub-Nav)"]
+  Home --> PromoBanner["PromoBanner.jsx (Trade-In Notice)"]
+  Home --> Card["Card.jsx (Interactive Finish Preview)"]
+  Home --> Button["Button.jsx (Action Controls)"]
+```
+
+### Project Structure
+
+```text
+iphone13pro-react/
+├── .agents/
+│   └── plugins.json        # Antigravity plugin registry (@vitoria-rodrigues/agent-mesh)
+├── src/
+│   ├── assets/
+│   │   └── img/            # Device finish photography and Apple vector logo
+│   ├── components/         # Reusable UI components and stylesheets
+│   ├── pages/
+│   │   └── Home.jsx        # Main showcase page view
+│   ├── App.css             # Application layout styles
+│   ├── App.jsx             # Root React component
+│   ├── index.css           # Global CSS resets and variables
+│   └── main.jsx            # React DOM entrypoint
+├── AGENTS.md               # Sovereign root context router (Layer 1)
+├── eslint.config.js        # ESLint flat configuration
+├── index.html              # HTML entry document
+├── package.json            # Scoped manifest (@vitoria-rodrigues/iphone13pro-react)
+├── pnpm-lock.yaml          # Deterministic pnpm lockfile
+├── pnpm-workspace.yaml     # Centralized pnpm dependency catalogs
+├── README.md               # Primary developer documentation
+└── vite.config.js          # Vite bundler configuration
+```
+
+---
+
+## 3. Getting Started
+
+### Prerequisites
+
+- Node.js 20 or higher
+- pnpm 10 or higher
+
+### Installation & Local Development
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Vitoria-Rodrigues/iphone13pro-react.git
+cd iphone13pro-react
+```
+
+2. Install dependencies:
+
+```bash
+pnpm install
+```
+
+3. Start the local development server:
+
+```bash
+pnpm dev
+```
+
+---
+
+## 4. Key Scripts
+
+| Command | Description |
+| :--- | :--- |
+| `pnpm dev` | Starts the Vite development server with Hot Module Replacement (HMR). |
+| `pnpm build` | Compiles production assets into the `dist/` directory. |
+| `pnpm preview` | Serves the production build locally for validation. |
+| `pnpm lint` | Executes ESLint across project source files. |
+
+---
+
+## 5. AI Agent Mesh Integration
+
+This repository consumes organizational AI agent skills, rules, and MCP configurations via `@vitoria-rodrigues/agent-mesh` declared in `catalog:plugins-stack` ([pnpm-workspace.yaml](./pnpm-workspace.yaml)) and mounted through [.agents/plugins.json](./.agents/plugins.json).
+
+---
+
+## 6. Governance Standards
+
+1. **Conventional Commits**: All commits must follow `<type>(<scope>): <description>` (v1.0.0).
+2. **Cryptographic Signing**: Sign commits with SSH (`git commit -S -m "..."`) when a signing key is configured.
+3. **Zero-Emoji Invariant**: Emojis are strictly prohibited in code, documentation, and commit messages.
+4. **Language Policy**: Technical documentation, code, and commit messages are written strictly in en-US.
